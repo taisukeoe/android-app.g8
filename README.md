@@ -3,6 +3,9 @@
 [giter8](http://github.com/n8han/giter8) template to get an Android
 sbt project up and running in a matter of seconds
 
+Forked from [android-app](https://github.com/jberkel/android-app.g8) to add following plugins as default setting:
+ [sbt-idea](https://github.com/mpeltonen/sbt-idea)
+
 ## How to use
 
 To use this template, g8 needs to be installed first. Read g8's
