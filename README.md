@@ -1,10 +1,11 @@
 # Android App in Scala
 
-[giter8](http://github.com/n8han/giter8) template to get an Android
-sbt project up and running in a matter of seconds
+## About
+This is [giter8](http://github.com/n8han/giter8) template for Android project with Scala 2.10, folked from [jberkel/android-app.g8](https://github.com/jberkel/android-app.g8) .
 
-Forked from [android-app](https://github.com/jberkel/android-app.g8) to add following plugins as default setting:
- [sbt-idea](https://github.com/mpeltonen/sbt-idea)
+Due to [#SI-7253](https://issues.scala-lang.org/browse/SI-7253), I strongly recommend you to use **Scala2.10.2-RC1 or above**.
+
+Please refer to [my blog article](http://taisukeoe.github.io/blog/2013/03/22/scala-2-dot-10-bytecode/) for more detail (only in Japanese, though).
 
 ## How to use
 
@@ -13,7 +14,7 @@ To use this template, g8 needs to be installed first. Read g8's
 
 All done? Now fire up your favorite shell and enter
 
-    g8 jberkel/android-app
+    g8 taisukeoe/android-app
     cd <name-of-app>
     sbt android:package-debug
 

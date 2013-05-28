@@ -12,8 +12,20 @@ object General {
     platformName in Android := "android-$api_level$"
   )
 
+   val proOpt = Seq(
+    "-keep class android.support.v4.app.** { *; }",
+    "-keep interface android.support.v4.app.** { *; }",
+    "-keep class com.android.vending.billing.**",
+    /* 
+       Since SI-5379 is not fixed yet, you need a below line. 
+       See https://issues.scala-lang.org/browse/SI-5397 for more detail.
+     */
+    "-keep class scala.collection.SeqLike { public protected *;}" 
+  )
+
   val proguardSettings = Seq (
-    useProguard in Android := $useProguard$
+    useProguard in Android := $useProguard$,
+    proguardOption in Android := proOpt.mkString(" ")
   )
 
   lazy val fullAndroidSettings =
@@ -24,7 +36,7 @@ object General {
     AndroidManifestGenerator.settings ++
     AndroidMarketPublish.settings ++ Seq (
       keyalias in Android := "change-me",
-      libraryDependencies += "org.scalatest" %% "scalatest" % "1.7.RC1" % "test"
+      libraryDependencies += "org.scalatest" %% "scalatest" % "1.9.1" % "test"
     )
 }
 
