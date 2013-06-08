@@ -10,7 +10,7 @@ object General {
     version := "0.1",
     versionCode := 0,
     scalaVersion := "$scala_version$",
-    platformName in Android := "android-$api_level$"
+    platformName in Android := "android-$target_api_level$"
   )
 
    val proOpt = Seq(
@@ -32,11 +32,12 @@ object General {
   lazy val fullAndroidSettings =
     General.settings ++
     AndroidProject.androidSettings ++
-    TypedResources.settings ++
+ // TypedResources.settings ++
     proguardSettings ++
     AndroidManifestGenerator.settings ++
     AndroidMarketPublish.settings ++ Seq (
       keyalias in Android := "change-me",
+      keystorePath in Android := Path.userHome / "foo.keystore",
       libraryDependencies += "org.scalatest" %% "scalatest" % "1.9.1" % "test"
     )
 }

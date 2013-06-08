@@ -12,9 +12,16 @@ class AndroidTests extends AndroidTestCase {
 }
 
 class ActivityTests extends ActivityInstrumentationTestCase2(classOf[$main_activity$]) {
-   def testHelloWorldIsShown() {
-      val activity = getActivity
-      val textview = activity.findView(TR.textview)
-      assertEquals(textview.getText, "hello, world!")
-    }
+  var activity:$main_activity$ = _
+  var textView:TextView = _
+
+  override def setUp() {
+    super.setUp()
+    setActivityInitialTouchMode(false)
+    activity = getActivity
+    textview = activity.findViewById(hemplant.future.test.R.id.textview).asInstanceOf[TextView]
+  }
+  def testHelloWorldIsShown() {
+    assertEquals(textview.getText, "hello, world!")
+  }
 }

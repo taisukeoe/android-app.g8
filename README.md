@@ -3,7 +3,7 @@
 ## About
 This is [giter8](http://github.com/n8han/giter8) template for Android project with Scala 2.10, folked from [jberkel/android-app.g8](https://github.com/jberkel/android-app.g8) .
 
-Due to [#SI-7253](https://issues.scala-lang.org/browse/SI-7253), I strongly recommend you to use **Scala2.10.2-RC1 or above**.
+Due to [#SI-7253](https://issues.scala-lang.org/browse/SI-7253), I strongly recommend you to use **Scala2.10.2 or above**.
 
 Please refer to [my blog article](http://taisukeoe.github.io/blog/2013/03/22/scala-2-dot-10-bytecode/) for more detail (only in Japanese, though).
 
