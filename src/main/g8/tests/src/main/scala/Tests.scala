@@ -20,7 +20,7 @@ class ActivityTests extends ActivityInstrumentationTestCase2(classOf[$main_activ
     super.setUp()
     setActivityInitialTouchMode(false)
     activity = getActivity
-    textview = activity.findViewById(hemplant.future.test.R.id.textview).asInstanceOf[TextView]
+    textview = activity.findViewById($package$.R.id.textview).asInstanceOf[TextView]
   }
   def testHelloWorldIsShown() {
     assertEquals(textview.getText, "hello, world!")
